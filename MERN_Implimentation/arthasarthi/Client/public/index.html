@@ -1,4 +1,101 @@
-// =================================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArthaSarthi - Financial Literacy for Rural India</title>
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ea580c', // Orange-600
+                        secondary: '#16a34a', // Green-600
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-slate-800 antialiased selection:bg-orange-200 selection:text-orange-900">
+    <div id="root"></div>
+    <!-- Background Image -->
+    <div class="bg-container"></div>
+    
+    <!-- Navigation -->
+    <!-- <nav class="glass-nav fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="showLanding()">
+                    <div class="bg-orange-100 p-2 rounded-lg group-hover:bg-orange-200 transition">
+                        <i class="fas fa-seedling text-2xl text-primary"></i>
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-slate-800">Artha<span class="text-primary">Sarthi</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <button onclick="showLanding()" class="text-slate-600 hover:text-primary font-medium transition">Home</button>
+                    <button onclick="launchApp('translator')" class="text-slate-600 hover:text-primary font-medium transition">Translator</button>
+                    <button onclick="launchApp('chatbot')" class="text-slate-600 hover:text-primary font-medium transition">Sahayak Bot</button>
+                    <button onclick="launchApp('blog')" class="text-slate-600 hover:text-primary font-medium transition">Blog</button>
+                    <button onclick="launchApp('ledger')" class="text-slate-600 hover:text-primary font-medium transition flex items-center gap-1"><i class="fas fa-calculator text-xs"></i> Ledger</button>
+                    <button onclick="toggleModal('loginModal')" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 transition-all duration-300">
+                        Login
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-slate-600 hover:text-primary text-2xl"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- === LANDING PAGE SECTION === -->
+
+    <!-- Landing Page -->
+    
+
+
+    <!-- Login Modal -->
+    <div class="modal fixed inset-0 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300" id="loginModal">
+        <div class="bg-white p-8 rounded-3xl w-96 text-center transform scale-95 transition-transform duration-300 relative shadow-2xl border border-slate-100">
+            <button class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-500 transition" onclick="toggleModal('loginModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary text-2xl">
+                <i class="fas fa-user-lock"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-2 text-slate-800">Welcome Back</h2>
+            <p class="text-slate-500 text-sm mb-6">Login to access your financial dashboard.</p>
+            
+            <div class="space-y-3">
+                <input type="text" placeholder="Phone Number / Aadhaar" class="w-full p-4 border border-slate-200 rounded-xl bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-400 transition text-sm font-medium">
+                <input type="password" placeholder="4-Digit PIN" class="w-full p-4 border border-slate-200 rounded-xl bg-slate-50 focus:outline-none focus:ring-2 focus:ring-orange-100 focus:border-orange-400 transition text-sm font-medium">
+            </div>
+            
+            <button onclick="toggleModal('loginModal'); launchApp('translator')" class="w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 mt-6 text-sm tracking-wide uppercase">
+                Secure Login
+            </button>
+            <p class="mt-6 text-xs text-slate-400">Don't have an account? <a href="#" class="text-primary font-bold hover:underline">Register</a></p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // =================================================================
         //  STEP 1: PASTE YOUR GOOGLE GEMINI API KEY BELOW (INSIDE QUOTES)
         // =================================================================
         const apiKey = ""; 
@@ -368,3 +465,6 @@
 
         updateUI();
         updateStatus();
+    </script>
+</body>
+</html> 
